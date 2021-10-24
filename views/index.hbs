@@ -1,50 +1,52 @@
-<div class="container mt-5">
-  <div class="d-flex justify-content-center">
-    <div style="width: 400px;">
-      {{!-- 分類選單 --}}
-      <div>
-        <form class="align-middle" action="/" method="get">
-          <select onchange="submit()" name="sortCondition" style="width: 400px;">
-            <option value="" name="">類別</option>
-            <option value="home" name="home">家居物業</option>
-            <option value="traffic" name="traffic">交通出行</option>
-            <option value="recreation" name="recreation">休閒娛樂</option>
-            <option value="diet" name="diet">餐飲食品</option>
-            <option value="other" name="other">其他</option>
-          </select>
-        </form>
-      </div>
+<div class="d-flex justify-content-center">
+  <div style="width: 400px;">
+    {{!-- 分類選單 --}}
+    <div>
+      <form class="align-middle" action="/" method="get">
+        <select onchange="submit()" name="sortCondition" style="width: 400px;">
+          <option value="" name="">類別</option>
+          <option value="home" name="home">家居物業</option>
+          <option value="traffic" name="traffic">交通出行</option>
+          <option value="recreation" name="recreation">休閒娛樂</option>
+          <option value="diet" name="diet">餐飲食品</option>
+          <option value="other" name="other">Other</option>
+        </select>
+      </form>
+    </div>
 
-      {{!-- 總金額 --}}
-      <div class="d-flex justify-content-between mt-3">
-        <p class="align-top" style="margin-right: 0;">總金額: </p>
-        <h3 style="font-size: 65px;">$456813</h3>
-      </div>
+    {{!-- 總金額 --}}
+    <div class="d-flex justify-content-between mt-3">
+      <p class="align-top" style="margin-right: 0;">總金額: </p>
+      <h3 style="font-size: 65px;">$456813</h3>
     </div>
   </div>
-
-  {{!-- 清單 --}}
-  <section>
-    <div class="m-auto d-flex flex-row justify-content-between list-item-diet">
-
-      <div class="d-flex">
-        <i class="fas fa-home fa-3x"></i>
-        <div>
-          <p class="m-0" style="font-weight: bold; font-size: 20px">午餐</p>
-          <p class="m-0" style="font-size: 8px;">2018/08/08</p>
-        </div>
-      </div>
-
-      <div class="d-flex align-items-center">
-        <p class="m-0">$ 50</p>
-      </div>
-
-      <div class="col-auto d-flex align-items-center">
-        <a class="btn btn-secondary mr-4">修改</a>
-        <a class="btn btn-outline-danger">刪除</a>
-      </div>
-
-    </div>
-  </section>
-
 </div>
+
+{{!-- 新增按鈕 --}}
+<div class="d-flex justify-content-end mb-2 mx-auto">
+  <a href="/accounts/new" class="btn btn-success">+ 新增支出</a>
+</div>
+
+{{!-- 清單 --}}
+<section>
+  <div class="m-auto d-flex flex-row justify-content-between list-item-diet">
+
+    <div class="d-flex">
+      <i class="fas fa-home fa-3x"></i>
+      <div>
+        <p class="m-0" style="font-weight: bold; font-size: 20px">午餐</p>
+        <p class="m-0" style="font-size: 8px;">2018/08/08</p>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <p class="m-0">$ 50</p>
+    </div>
+    {{!-- 清單item功能按鈕 --}}
+    <div class="col-auto d-flex align-items-center">
+      <a href="/accounts/edit" class="btn btn-secondary mr-4">修改</a>
+      <a class="btn btn-outline-danger">刪除</a>
+    </div>
+
+  </div>
+</section>

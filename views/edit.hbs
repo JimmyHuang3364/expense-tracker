@@ -1,0 +1,45 @@
+<section>
+  <h1 class="mb-1 restaurant-show-title">新增支出</h1>
+  <div class="container">
+    <form action="/accounts" method="POST">
+
+      <div class="form-group">
+        <label for="formGroupExampleInput2">名稱</label>
+        <input type="text" class="form-control" placeholder="請輸入店名" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">日期</label>
+        <input type="date" class="form-control" style="im" placeholder="" name="name_en" pattern="[a-z0-9]*" required>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">類別</label>
+        <select id="inputState" class="form-control">
+          <option>家居物業</option>
+          <option>交通出行</option>
+          <option>休閒娛樂</option>
+          <option>餐飲食品</option>
+          <option selected>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">金額</label>
+        <input type="number" class="form-control" placeholder="請輸入正數" name="image" onkeyup="value=value.replace(/[^\d.]/g,'')" required>
+      </div>
+
+
+      <div class="d-flex flex-column align-items-center mt-5">
+
+        <div class="">
+          <button class="btn btn-success mb-3" style="width: 15em;" type="submit" id="add-renew-button">送出</button>
+        </div>
+        <div>
+          <a href="/" class="btn btn-secondary" style="width: 15em;" id="cancel-button">取消</a>
+        </div>
+
+      </div>
+
+    </form>
+
+
+  </div>
+</section>
