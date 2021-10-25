@@ -2,11 +2,11 @@
   "results": [
     {
       "userName": "User1",
-      "password": "12345678"
+      "password": "1234"
     },
     {
       "userName": "User2",
-      "password": "12345678"
+      "password": "1234"
     }
   ]
 }
