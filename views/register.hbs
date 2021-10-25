@@ -1,0 +1,28 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mt-3">Register</h1>
+      {{!-- {{> message}} --}}
+      <form action="/users/register" method="POST">
+        <p style="font-size: 12px"><span class="text-danger">*</span> 為必填</p>
+        <div class="form-group">
+          <label for="name"><span class="text-danger">*</span> User Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" value="{{userName}}" required>
+
+        </div>
+        <div class="form-group">
+          <label for="password"><span class="text-danger">*</span> Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" value="{{password}}" required>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword"><span class="text-danger">*</span> Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm Password" value="{{confirmPassword}}" required>
+        </div>
+        <button type="submit" class="btn btn-block text-white mt-5" style="background-color: rgb(22, 71, 207);">Register</button>
+      </form>
+      <p class="lead mt-4">
+        Have An Account? <a href="/users/login">Login</a>
+      </p>
+    </div>
+  </div>
+</div>
