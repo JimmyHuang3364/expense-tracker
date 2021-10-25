@@ -1,0 +1,64 @@
+{
+  "results": [
+    {
+      "caption": "早餐",
+      "date": "2021-01-01",
+      "category": "diet",
+      "amount": 80
+    },
+    {
+      "caption": "午餐",
+      "date": "2021-01-02",
+      "category": "diet",
+      "amount": 199
+    },
+    {
+      "caption": "晚餐",
+      "date": "2021-01-03",
+      "category": "diet",
+      "amount": 399
+    },
+    {
+      "caption": "消夜",
+      "date": "2021-01-04",
+      "category": "diet",
+      "amount": 65
+    },
+    {
+      "caption": "房屋租金",
+      "date": "2021-01-05",
+      "category": "HOME",
+      "amount": 5000
+    },
+    {
+      "caption": "水電費",
+      "date": "2021-01-06",
+      "category": "HOME",
+      "amount": 1186
+    },
+    {
+      "caption": "捷運",
+      "date": "2021-01-07",
+      "category": "transportation",
+      "amount": 50
+    },
+    {
+      "caption": "Uber",
+      "date": "2021-01-08",
+      "category": "transportation",
+      "amount": 351
+    },
+    {
+      "caption": "電影",
+      "date": "2021-01-09",
+      "category": "recreation",
+      "amount": 230
+    },
+    {
+      "caption": "結婚紅包",
+      "date": "2021-01-10",
+      "category": "Other",
+      "amount": 600
+    }
+  ]
+}

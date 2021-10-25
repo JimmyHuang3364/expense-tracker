@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "userName": "User1",
+      "password": "12345678"
+    },
+    {
+      "userName": "User2",
+      "password": "12345678"
+    }
+  ]
+}
