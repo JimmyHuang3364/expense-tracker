@@ -3,9 +3,13 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 
 
+
 const app = express()
 const routes = require('./routes')
 const port = 3000
+
+// 連線資料庫
+require('./config/mongoose')
 
 app.engine('hbs', exphbs({ defaultlayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
