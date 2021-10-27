@@ -6,14 +6,18 @@ const category = require('../../models/category')
 
 // homepage:
 router.get('/', (req, res) => {
+  const styleSheet = 'index.css'
+  let totalAmount = 0
   expenseTracker.find()
     .lean()
     .then(expenseTrackerItem => {
-      return category.find()
+      category.find()
         .lean()
         .then(allCategoryItem => {
-
-          res.render('index', { allCategoryItem, expenseTrackerItem })
+          Array.from(expenseTrackerItem, item => {
+            totalAmount += item.amount
+          })
+          res.render('index', { allCategoryItem, expenseTrackerItem, totalAmount, styleSheet })
         })
         .catch(err => console.log(err))
     })

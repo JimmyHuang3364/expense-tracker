@@ -15,7 +15,7 @@
     {{!-- 總金額 --}}
     <div class="d-flex justify-content-between mt-3">
       <p class="align-top" style="margin-right: 0;">總金額: </p>
-      <h3 style="font-size: 65px;">$456813</h3>
+      <h3 style="font-size: 65px;">${{totalAmount}}</h3>
     </div>
   </div>
 </div>
@@ -31,7 +31,7 @@
   <div class="mx-auto mb-3 d-flex flex-row justify-content-between list-item-diet">
 
     <div class="d-flex">
-      <i class="fas fa-home fa-3x"></i>
+      <i class="{{this.classIconName}} fa-3x"></i>
       <img src="https://fontawesome.com/icons/home?style=solid" alt="" srcset="">
       <div>
         <p class="m-0" style="font-weight: bold; font-size: 20px">{{this.caption}}</p>
