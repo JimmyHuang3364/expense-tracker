@@ -6,11 +6,11 @@ const categorySchema = new Schema({
     type: String,
     required: true
   },
-  en_CategoryName: {
+  enCategoryName: {
     type: String,
     required: true
   },
-  class_IconName: {
+  classIconName: {
     type: String,
     required: true
   }

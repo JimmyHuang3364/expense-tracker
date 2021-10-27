@@ -14,8 +14,8 @@ db.once('open', () => {
     Array.from(categoryJson, element => {
       return category.create({
         CategoryName: element.CategoryName,
-        en_CategoryName: element.en_CategoryName,
-        class_IconName: element.class_IconName
+        enCategoryName: element.enCategoryName,
+        classIconName: element.classIconName
       })
     })
   )

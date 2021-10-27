@@ -7,7 +7,7 @@ const expenseTrackerSchema = new Schema({
     required: true
   },
   date: {
-    type: Date,
+    type: String,
     required: true
   },
   category: {
@@ -16,6 +16,10 @@ const expenseTrackerSchema = new Schema({
   },
   amount: {
     type: Number,
+    required: true
+  },
+  classIconName: {
+    type: String,
     required: true
   },
   userId: {

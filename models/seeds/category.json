@@ -2,28 +2,28 @@
   "results": [
     {
       "CategoryName": "家居物業",
-      "en_CategoryName": "HOME",
-      "class_IconName": "fas fa-home"
+      "enCategoryName": "HOME",
+      "classIconName": "fas fa-home"
     },
     {
       "CategoryName": "交通出行",
-      "en_CategoryName": "transportation",
-      "class_IconName": "fas fa-shuttle-van"
+      "enCategoryName": "transportation",
+      "classIconName": "fas fa-shuttle-van"
     },
     {
       "CategoryName": "休閒娛樂",
-      "en_CategoryName": "recreation",
-      "class_IconName": "fas fa-grin-beam"
+      "enCategoryName": "recreation",
+      "classIconName": "fas fa-grin-beam"
     },
     {
       "CategoryName": "餐飲食品",
-      "en_CategoryName": "diet",
-      "class_IconName": "fas fa-utensils"
+      "enCategoryName": "diet",
+      "classIconName": "fas fa-utensils"
     },
     {
       "CategoryName": "其他",
-      "en_CategoryName": "Other",
-      "class_IconName": "fas fa-pen"
+      "enCategoryName": "Other",
+      "classIconName": "fas fa-pen"
     }
   ]
 }
