@@ -55,23 +55,24 @@ router.post('/register', (req, res) => {
           confirmPassword
         })
       }
+      //無重複，開始註冊程序
+      return bcrypt
+        .genSalt(10) //產鹽
+        .then(salt => bcrypt.hash(password, salt))
+        .then(hash => User.create({
+          userName,
+          password: hash
+        }))
+        .then(() => res.redirect('/'))
+        .catch(err => console.log(err))
     })
-  return bcrypt
-    .genSalt(10) //產鹽
-    .then(salt => bcrypt.hash(password, salt))
-    .then(hash => User.create({
-      userName,
-      password: hash
-    }))
-    .then(() => res.redirect('/'))
-    .catch(err => console.log(err))
 })
 
 
 // logout: action
 router.get('/logout', (req, res) => {
   req.logout()
-  // req.flash('success_msg', '你已經成功登出。')
+  req.flash('success_msg', '你已經成功登出。')
   res.redirect('/users/login')
 })
 module.exports = router

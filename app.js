@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const usePassport = require('./config/passport')
 const session = require('express-session')
+const flash = require('connect-flash')
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -31,10 +32,14 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 usePassport(app)
+app.use(flash())
 
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated()
   res.locals.user = req.user
+  res.locals.loginErr_msg = req.flash('loginErr_msg')
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
   next()
 })
 
