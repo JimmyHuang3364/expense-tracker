@@ -25,7 +25,7 @@ const expenseTrackerSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    index: true,
+    index: false,
     required: true
   }
 

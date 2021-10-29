@@ -2,9 +2,10 @@
   <div style="width: 400px;">
     {{!-- 分類選單 --}}
     <div>
-      <form class="align-middle" action="/" method="get">
-        <select onchange="submit()" name="sortCondition" style="width: 400px;">
-          <option value="" name="">類別</option>
+      <form class="align-middle" action="/expenseTracker/categoryCondition" method="get">
+        <select onchange="submit()" name="categoryCondition" style="width: 400px;">
+          <option value="" name="" selected>類別</option>
+          <option value="" name="">全部</option>
           {{#each allCategoryItem}}
           <option value="{{this.enCategoryName}}" name="{{this.enCategoryName}}">{{this.CategoryName}}</option>
           {{/each}}
@@ -44,8 +45,10 @@
     </div>
     {{!-- 清單item功能按鈕 --}}
     <div class="col-auto d-flex align-items-center">
-      <a href="/expenseTracker/edit" class="btn btn-secondary mr-4">修改</a>
-      <a class="btn btn-outline-danger">刪除</a>
+      <a href="/expenseTracker/{{this._id}}/edit" class="btn btn-secondary mr-4">修改</a>
+      <form action="/expenseTracker/{{this._id}}?_method=DELETE" method="post" onSubmit="javascript:return window.confirm('確認刪除嗎?')">
+        <button type="submit" class="btn btn-outline-danger">刪除</button>
+      </form>
     </div>
 
   </div>

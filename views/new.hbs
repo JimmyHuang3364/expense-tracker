@@ -5,25 +5,24 @@
 
       <div class="form-group">
         <label for="formGroupExampleInput2">名稱</label>
-        <input type="text" class="form-control" placeholder="請輸入店名" name="caption" required>
+        <input type="text" class="form-control" placeholder="請輸入用途" name="caption" required>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">日期</label>
-        <input type="date" class="form-control" style="im" placeholder="" name="name_en" pattern="[a-z0-9]*" required>
+        <input type="date" class="form-control" placeholder="" name="date" pattern="[a-z0-9]*" required>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">類別</label>
-        <select id="inputState" class="form-control">
-          <option>家居物業</option>
-          <option>交通出行</option>
-          <option>休閒娛樂</option>
-          <option>餐飲食品</option>
-          <option selected>Other</option>
+        <select id="inputState" class="form-control" name="category">
+          <option selected>類別</option>
+          {{#each categoryItem}}
+          <option value="{{this.enCategoryName}}" name="{{this.enCategoryName}}">{{this.CategoryName}}</option>
+          {{/each}}
         </select>
       </div>
       <div class="form-group">
         <label for="formGroupExampleInput2">金額</label>
-        <input type="number" class="form-control" placeholder="請輸入正數" name="image" onkeyup="value=value.replace(/[^\d.]/g,'')" required>
+        <input type="number" class="form-control" placeholder="請輸入正數" name="amount" onkeyup="value=value.replace(/[^\d.]/g,'')" required>
       </div>
 
 
