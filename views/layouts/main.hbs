@@ -5,7 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{#if Name}}
+  <title>{{Name}}的家庭記帳本</title>
+  {{else}}
   <title>家庭記帳本</title>
+  {{/if}}
   <link rel="stylesheet" href="/stylesheets/bootstrap.css">
   <link rel="stylesheet" href="/stylesheets/main.css">
   <link rel="stylesheet" href="/stylesheets/{{styleSheet}}">
@@ -15,7 +19,11 @@
   <header>
     <nav class="navbar navbar-dark  bg-dark">
       <div class="container">
+        {{#if Name}}
+        <a href="/" class="navbar-brand mb-0 h1">{{Name}}的家庭記帳本</a>
+        {{else}}
         <a href="/" class="navbar-brand mb-0 h1">家庭記帳本</a>
+        {{/if}}
         <div class="d-flex flex-row-reverse">
           {{#if isAuthenticated}}
           <a href="/users/logout" class="btn btn-outline-danger">Logout</a>

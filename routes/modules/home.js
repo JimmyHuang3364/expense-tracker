@@ -8,6 +8,7 @@ const category = require('../../models/category')
 router.get('/', (req, res) => {
   const styleSheet = 'index.css'
   const userId = req.user._id
+  const Name = req.user.userName
   let totalAmount = 0
   expenseTracker.find({ userId })
     .lean()
@@ -18,7 +19,7 @@ router.get('/', (req, res) => {
           Array.from(expenseTrackerItem, item => {
             totalAmount += item.amount
           })
-          res.render('index', { allCategoryItem, expenseTrackerItem, totalAmount, styleSheet })
+          res.render('index', { Name, allCategoryItem, expenseTrackerItem, totalAmount, styleSheet })
         })
         .catch(err => console.log(err))
     })
