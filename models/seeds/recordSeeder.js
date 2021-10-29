@@ -1,5 +1,6 @@
 console.log('建立User種子資料')
 
+const bcrypt = require('bcryptjs')
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -14,10 +15,13 @@ const db = require('../../config/mongoose')
 
 db.once('open', () => {
   Array.from(seedUsers, element => {
-    User.create({
-      userName: element.userName,
-      password: element.password
-    })
+    return bcrypt
+      .genSalt(10)
+      .then(salt => bcrypt.hash(element.password, salt))
+      .then(hash => User.create({
+        userName: element.userName,
+        password: hash
+      }))
       .then(user => {
         const userId = user._id
         const waitForCreate = []

@@ -7,8 +7,9 @@ const category = require('../../models/category')
 // homepage:
 router.get('/', (req, res) => {
   const styleSheet = 'index.css'
+  const userId = req.user._id
   let totalAmount = 0
-  expenseTracker.find()
+  expenseTracker.find({ userId })
     .lean()
     .then(expenseTrackerItem => {
       category.find()

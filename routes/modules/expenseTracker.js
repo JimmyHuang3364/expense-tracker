@@ -17,7 +17,7 @@ router.get('/new', (req, res) => {
 
 //about新增支出部分-增-action
 router.post('/', (req, res) => {
-  req.body.userId = '3345678'
+  req.body.userId = req.user._id
   return CATEGORY.findOne({ enCategoryName: req.body.category })
     .then((categoritem) => req.body.classIconName = categoritem.classIconName)
     .then(() => {
@@ -55,7 +55,6 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
   console.log('收到PUT')
   const id = req.params.id
-  console.log(req.body)
   return CATEGORY.findOne({ enCategoryName: req.body.category })
     .then((categoritem) => {
       req.body.classIconName = categoritem.classIconName
@@ -72,9 +71,10 @@ router.put('/:id', (req, res) => {
 router.get('/categoryCondition', (req, res) => {
   const styleSheet = 'index.css'
   const category = req.query.categoryCondition
+  const userId = req.user._id
   let totalAmount = 0
   if (category) {
-    EXPENSETRACKER.find({ category })
+    EXPENSETRACKER.find({ category, userId })
       .lean()
       .then(expenseTrackerItem => {
         CATEGORY.find()
@@ -89,7 +89,7 @@ router.get('/categoryCondition', (req, res) => {
       })
       .catch(err => console.log(err))
   } else {
-    EXPENSETRACKER.find()
+    EXPENSETRACKER.find({ userId })
       .lean()
       .then(expenseTrackerItem => {
         CATEGORY.find()
