@@ -29,8 +29,8 @@ db.once('open', async () => {
       console.log(`  ->建立支出${i + 1}`)
       let randomNum = Math.floor(Math.random() * seedExpenseTracker.length)
       let item = seedExpenseTracker.splice(randomNum, 1)[0]
-      const categoryItems = await category.findOne({ category: item.category }).lean()
-      // item.classIconName = categoryItems.classIconName
+      let categoryItems = await category.findOne({ enCategoryName: item.category }).lean()
+      console.log(categoryItems)
       // item.userId = newUserId
       await expenseTracker.create({
         caption: item.caption,
