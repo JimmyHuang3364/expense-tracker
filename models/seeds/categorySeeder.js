@@ -1,4 +1,4 @@
-console.log(`建立category種子資料`)
+console.log('開啟categorySeeder.js')
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -21,7 +21,7 @@ db.once('open', () => {
   )
     .then(() => {
       console.log('建立category種子資料完成')
-      console.log('退出category.js程式')
+      console.log('退出categorySeeder.js')
       console.log('------------------')
       process.exit()
     })
