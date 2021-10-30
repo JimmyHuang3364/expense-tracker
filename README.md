@@ -40,11 +40,11 @@
 ## 安裝
 - 下載
 ```
-  https://github.com/JimmyHuang3364/restaurant_list.git
+  https://github.com/JimmyHuang3364/expense-tracker.git
 ```
 - 執行
 ```
-cd restaurant_list
+cd expense-tracker
 npm i
 npm run seed
 npm run dev
