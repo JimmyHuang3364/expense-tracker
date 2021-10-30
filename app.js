@@ -46,5 +46,5 @@ app.use((req, res, next) => {
 app.use(routes)
 
 app.listen(process.env.PORT, () => {
-  console.log('server is running')
+  console.log(`App is running on http://localhost:${PORT}`)
 })
