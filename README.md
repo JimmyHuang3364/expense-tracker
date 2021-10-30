@@ -18,10 +18,10 @@
 - 執行 npm run seed，系統會建立兩位使用者並隨機從10項種子資料套用5項。
 - 虛構種子用戶及密碼
   用戶1
-    User name: Uesr1
+    User name: User1
     Password 1234
   用戶2
-    User name: Uesr2
+    User name: User2
     Password 1234
 
 ## 需求
