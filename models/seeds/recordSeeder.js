@@ -30,8 +30,6 @@ db.once('open', async () => {
       let randomNum = Math.floor(Math.random() * seedExpenseTracker.length)
       let item = seedExpenseTracker.splice(randomNum, 1)[0]
       let categoryItems = await category.findOne({ enCategoryName: item.category }).lean()
-      console.log(categoryItems)
-      // item.userId = newUserId
       await expenseTracker.create({
         caption: item.caption,
         date: item.date,
