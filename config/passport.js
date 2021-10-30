@@ -12,11 +12,11 @@ module.exports = app => {
     User.findOne({ userName })
       .then(user => {
         if (!user) {
-          return done(null, false, { message: '用戶不存在' })
+          return done(null, false, req.flash('loginErr_msg', '該用戶不存在'))
         }
         return bcrypt.compare(password, user.password).then(isMatch => {
           if (!isMatch) {
-            return done(null, false, { message: '密碼錯誤' })
+            return done(null, false, req.flash('loginErr_msg', '密碼錯誤'))
           }
           return done(null, user)
         })
